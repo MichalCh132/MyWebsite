@@ -3,10 +3,16 @@
   height:100%;
   display: grid;
   grid-template-areas:
-  "hi | . | image | ."
-  "hi | . | image | ."
-  "desc | desc | desc | button"
-  "desc | desc | desc | button"
-  "desc | desc | desc | ."
-  ". | . | . | .";
+  "hi . image ."
+  "hi . image ."
+  "desc desc desc button"
+  "desc desc desc button"
+  "desc desc desc ."
+  ". . . .";
+
+  .hi{
+    margin-top: 40px;
+    font-size: 30px ;
+    grid-area: hi;
+  }
 }

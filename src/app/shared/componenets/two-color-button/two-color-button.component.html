@@ -1,3 +1,7 @@
-<div class='two-color-button-model-layout'>
-  {{params | json}}
+<div class='two-color-button-model-layout' >
+  <div (mouseenter)='setHover(true)' (mouseleave)='setHover(false)'>
+    <span class='char' [attr.character]='char' *ngFor='let char of chars' [ngClass]='{"char--active": colorSide == colorSides.left, "char--right": colorSide == colorSides.right, "char--hover": hover}'>
+      {{char}}
+    </span>
+  </div>
 </div>

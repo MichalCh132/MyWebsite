@@ -3,16 +3,17 @@
   height:100%;
   display: grid;
   grid-template-areas:
-  "hi . image ."
-  "hi . image ."
-  "desc desc desc button"
-  "desc desc desc button"
-  "desc desc desc ."
+  ". . image ."
+  "welcome . image ."
+  "welcome desc desc button"
+  ". desc desc button"
+  ". desc desc ."
   ". . . .";
+  padding: 0px 0px 0px 50px;
 
-  .hi{
+  .welcome-text{
     margin-top: 40px;
     font-size: 30px ;
-    grid-area: hi;
+    grid-area: welcome;
   }
 }

@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  buttons: TwoColorButtonModel[] = [{name: 'HOME', active: false},{name: 'SKILLS', active: false},{name: 'CONTACT', active: false}]
+  buttons: TwoColorButtonModel[] = [
+  {name: 'HOME', active: false, routerLink: 'home'},
+  {name: 'SKILLS', active: false, routerLink: 'skills'},
+  {name: 'CONTACT', active: false, routerLink: 'contact'}]
 
   constructor() {}
 

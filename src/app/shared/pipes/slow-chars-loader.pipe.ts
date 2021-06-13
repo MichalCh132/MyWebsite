@@ -1,3 +1,4 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Pipe, PipeTransform } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 
@@ -10,18 +11,22 @@ export class SlowCharsLoaderPipe implements PipeTransform {
   private charIndex: number = 0;
   private interval: number;
 
-  transform(value: string, speed: number = 140): unknown {
-
-    this.interval = window.setInterval( () => {
-      if(value.length <= this.charIndex ){
-        window.clearInterval(this.interval);
-        return;
-      }
-      this.charIndex++;
-      this.characters$.next(value.slice(0,this.charIndex));
-    },speed);
+  transform(value: string, prop: { speed: number, delay: number} = {speed: 140,delay: 0}): unknown {
+    window.setTimeout( () => {
+      this.showChars(value, prop.speed);
+    }, prop.delay)
 
     return this.characters$.asObservable();
   }
 
+  private showChars(chars: string, speed: number): void {
+    this.interval = window.setInterval( () => {
+      if(chars.length <= this.charIndex ){
+        window.clearInterval(this.interval);
+        return;
+      }
+      this.charIndex++;
+      this.characters$.next(chars.slice(0,this.charIndex));
+    },speed);
+  }
 }

@@ -1,19 +1,22 @@
 .layout-first-page{
-  width:100%;
+  flex:1;
   height:100%;
-  display: grid;
-  grid-template-areas:
-  ". . image ."
-  "welcome . image ."
-  "welcome desc desc button"
-  ". desc desc button"
-  ". desc desc ."
-  ". . . .";
-  padding: 0px 0px 0px 50px;
-
+  padding: 0px 0px 0px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .welcome-text{
-    margin-top: 40px;
-    font-size: 30px ;
-    grid-area: welcome;
+    width: 80%;
+    height: 50%;
+    color: #ebebeb;
+    margin-top: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem ;
+    p{
+      margin: 0px 0px 0px 0px;
+    }
+    .descThree{
+      font-size: 2rem ;
+    }
   }
 }

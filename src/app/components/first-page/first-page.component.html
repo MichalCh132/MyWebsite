@@ -1,7 +1,7 @@
 <div class='layout-first-page'>
   <div class='welcome-text'>
-     <p>{{"Hi" | slowCharsLoader | async}}</p>
-     <p>{{"I'm Michał" | slowCharsLoader | async}}</p>
-     <p>{{"Front-End Developer" | slowCharsLoader | async}}</p>
+     <p>{{ descOne | slowCharsLoader: {speed: 70, delay: 0}  | async}}</p>
+     <p>{{ descTwo | slowCharsLoader: {speed: 100, delay: 70 * descOne.length + 500} | async}}</p>
+     <p class='descThree'>{{ descThree | slowCharsLoader: {speed: 50, delay: 70 * descOne.length + 100 * descTwo.length + 1000} | async}}</p>
   </div>
 </div>

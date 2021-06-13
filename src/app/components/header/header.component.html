@@ -1,6 +1,7 @@
 <div class='layout-header'>
   <div class='menu'>
-    <app-two-color-button *ngFor='let button of buttons' [params]='button' [routerLink]='button.routerLink'>
+    <app-two-color-button *ngFor='let button of buttons' [params]='button' [routerLink]='button.routerLink' [routerLinkActive]='"menu__button--active"'
+    class='menu__button'>
     </app-two-color-button>
   </div>
 </div>
